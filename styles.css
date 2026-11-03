@@ -1,222 +1,264 @@
-:root {
-  --bg: #f6efe4;
-  --ink: #3a2b1a;
-  --muted: #6f5c45;
-  --gold: #a7843a;
-  --gold-soft: #d7b56a;
-  --display: 'Great Vibes', cursive;
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'Manrope', system-ui, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Manrope:wght@400;500&display=swap');
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
-html,
-body {
-  min-height: 100%;
-}
-
 body {
   margin: 0;
-  color: var(--ink);
-  font-family: var(--serif);
-  background: var(--bg);
-}
-
-.coming-soon {
-  position: relative;
   min-height: 100dvh;
+  font-family: Manrope, system-ui, sans-serif;
+  color: #1a2a3a;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(120, 170, 220, 0.35), transparent 60%),
+    radial-gradient(circle at 10% 90%, rgba(160, 200, 235, 0.35), transparent 40%),
+    linear-gradient(165deg, #eaf3fc 0%, #d7e6f6 50%, #c8daf0 100%);
+}
+
+.page {
+  min-height: 100dvh;
+  max-width: 24rem;
+  margin: 0 auto;
+  padding: 2rem 1.1rem;
   display: grid;
-  place-items: center;
-  padding: 1.5rem;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(215, 181, 106, 0.22), transparent 55%),
-    linear-gradient(165deg, #f9f3e8 0%, #efe4d2 45%, #e8d9c4 100%);
-}
-
-.coming-soon__glow {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 80%, rgba(167, 132, 58, 0.08), transparent 40%),
-    radial-gradient(circle at 85% 25%, rgba(167, 132, 58, 0.1), transparent 35%);
-  pointer-events: none;
-}
-
-.coming-soon__orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.45;
-  pointer-events: none;
-  animation: coming-float 9s ease-in-out infinite;
-}
-
-.coming-soon__orb--a {
-  width: 14rem;
-  height: 14rem;
-  top: 12%;
-  left: -4%;
-  background: rgba(215, 181, 106, 0.35);
-}
-
-.coming-soon__orb--b {
-  width: 11rem;
-  height: 11rem;
-  bottom: 8%;
-  right: -3%;
-  background: rgba(167, 132, 58, 0.28);
-  animation-delay: -4s;
-}
-
-.coming-soon__frame {
-  position: relative;
-  z-index: 1;
-  width: min(28rem, 100%);
+  align-content: center;
   text-align: center;
-  padding: 2.75rem 1.75rem 2.4rem;
-  background: rgba(255, 251, 244, 0.72);
-  border: 1px solid rgba(167, 132, 58, 0.28);
-  box-shadow:
-    0 20px 50px rgba(40, 28, 12, 0.1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(10px);
-  animation: coming-rise 1.1s ease both;
 }
 
-.coming-soon__frame::before {
+.page.card {
+  position: relative;
+  overflow: hidden;
+  padding: 2.4rem 1.5rem 2rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 30%),
+    rgba(248, 252, 255, 0.9);
+  border: 1px solid rgba(70, 120, 170, 0.28);
+  box-shadow:
+    0 18px 48px rgba(28, 55, 90, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+}
+
+.page.card::before {
   content: '';
   position: absolute;
-  inset: 0.65rem;
-  border: 1px solid rgba(167, 132, 58, 0.18);
+  inset: 0.7rem;
+  border: 1px solid rgba(70, 120, 170, 0.18);
   pointer-events: none;
 }
 
-.coming-soon__kicker {
-  margin: 0 0 1rem;
-  font-family: var(--sans);
-  font-size: 0.72rem;
+.floral {
+  position: absolute;
+  width: 7.5rem;
+  height: 7.5rem;
+  color: #5b8ab8;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floral svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.floral-tl {
+  top: -0.4rem;
+  left: -0.4rem;
+}
+
+.floral-br {
+  right: -0.4rem;
+  bottom: -0.4rem;
+  transform: rotate(180deg);
+}
+
+.card-body {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.7rem;
+  justify-items: center;
+}
+
+.invite-label {
+  margin: 0;
+  font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--muted);
-  animation: coming-fade 1.2s 0.15s ease both;
+  color: #5a7692;
 }
 
-.coming-soon__names {
+h1 {
   margin: 0;
-  display: grid;
-  gap: 0.15rem;
-  font-family: var(--display);
-  font-size: clamp(2.6rem, 9vw, 3.5rem);
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3.2rem, 14vw, 4rem);
   font-weight: 400;
-  line-height: 1.05;
-  color: var(--ink);
-  animation: coming-fade 1.2s 0.28s ease both;
+  line-height: 1;
+  color: #2a5a88;
 }
 
-.coming-soon__names em {
-  font-family: var(--serif);
+.tag {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
   font-style: italic;
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--gold);
-  letter-spacing: 0.08em;
+  color: #4a7aa8;
 }
 
-.coming-soon__divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin: 1.35rem 0 1.15rem;
-  color: var(--gold);
-  animation: coming-fade 1.2s 0.4s ease both;
+.bloom {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #6b9ac4;
+  margin: 0.15rem 0 0.35rem;
 }
 
-.coming-soon__divider span {
-  display: block;
-  width: 3.2rem;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+.bloom svg {
+  width: 100%;
+  height: 100%;
 }
 
-.coming-soon__badge {
-  margin: 0 0 1rem;
-  display: inline-block;
-  font-family: var(--serif);
+.names {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.35rem;
-  font-weight: 600;
+  line-height: 1.3;
+}
+
+.names em {
+  color: #3b6ea5;
+  font-style: italic;
+}
+
+.line {
+  margin: 0;
+  max-width: 18rem;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: #5a6f86;
+  line-height: 1.55;
+}
+
+.meta {
+  width: 100%;
+  margin-top: 0.35rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(70, 120, 170, 0.16);
+  display: grid;
+  gap: 0.85rem;
+}
+
+.meta p {
+  margin: 0;
+  line-height: 1.45;
+  color: #2a3d52;
+  font-size: 0.95rem;
+}
+
+.meta strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.68rem;
+  font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
-  animation: coming-pulse 2.8s ease-in-out infinite;
+  color: #2f5f8f;
 }
 
-.coming-soon__copy {
-  margin: 0 auto 1.4rem;
-  max-width: 22rem;
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 300;
-  line-height: 1.65;
-  color: var(--muted);
-  animation: coming-fade 1.2s 0.55s ease both;
-}
-
-.coming-soon__hosts {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 0.95rem;
+.hosts {
+  margin: 0.35rem 0 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
-  color: var(--ink);
-  opacity: 0.75;
-  animation: coming-fade 1.2s 0.7s ease both;
+  font-size: 0.98rem;
+  color: #5a6f86;
 }
 
-@keyframes coming-rise {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.985);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+.muted {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #5a6f86;
 }
 
-@keyframes coming-fade {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Full scene — all 3 cards */
+
+.page.scene {
+  position: relative;
+  overflow: hidden;
+  max-width: 26rem;
+  padding: 2.2rem 1.35rem 1.8rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 28%),
+    rgba(248, 252, 255, 0.92);
+  border: 1px solid rgba(70, 120, 170, 0.28);
+  box-shadow:
+    0 18px 48px rgba(28, 55, 90, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+  margin: 1rem auto;
+  min-height: calc(100dvh - 2rem);
+  align-content: start;
 }
 
-@keyframes coming-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-18px);
-  }
+.page.scene::before {
+  content: '';
+  position: absolute;
+  inset: 0.7rem;
+  border: 1px solid rgba(70, 120, 170, 0.18);
+  pointer-events: none;
 }
 
-@keyframes coming-pulse {
-  0%,
-  100% {
-    opacity: 0.72;
-  }
-  50% {
-    opacity: 1;
-  }
+.scene-body {
+  width: 100%;
+}
+
+.scene-title {
+  font-size: clamp(2.4rem, 10vw, 3.1rem);
+  line-height: 1.05;
+  max-width: 14ch;
+}
+
+.scene-list {
+  width: 100%;
+  display: grid;
+  gap: 0.7rem;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.scene-item {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(70, 120, 170, 0.2);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.scene-item:hover,
+.scene-item:focus-visible {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(47, 95, 143, 0.45);
+  outline: none;
+}
+
+.scene-item__name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.85rem;
+  color: #2a5a88;
+  line-height: 1;
+}
+
+.scene-item__meta {
+  font-size: 0.82rem;
+  color: #2f5f8f;
+  font-weight: 500;
+}
+
+.scene-item__where {
+  font-size: 0.85rem;
+  color: #5a6f86;
+  line-height: 1.35;
 }

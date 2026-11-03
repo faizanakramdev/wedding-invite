@@ -1,19 +1,28 @@
-# Wedding Invite — Coming Soon
+# Wedding invite — 3 funny cards
 
-Static Coming Soon page (HTML + CSS only). Auto-deploys to GitHub Pages on push to `main`.
+No React. No Vite. Sirf HTML + CSS.
 
-## Preview locally
-
-Open `index.html` in a browser, or:
+## Local
 
 ```bash
-npx serve .
+cd wedding-invite
+npx --yes serve .
 ```
 
-## Deploy (one-time)
+| Card | Local |
+|------|--------|
+| All 3 | http://localhost:3000/shaadi-da-poora-scene/ |
+| Mehndi | http://localhost:3000/mehndi-da-dhol-wajda/ |
+| Barat | http://localhost:3000/baraat-chali-aa/ |
+| Walima | http://localhost:3000/walima-de-roti-de-paisay/ |
 
-1. Create GitHub repo named `wedding-invite`
-2. Push `main`
-3. Settings → Pages → Source: **GitHub Actions**
+## Share (live) + print QR
 
-Later: just `git push` to `main` — live automatically.
+- https://faizanakramdev.github.io/wedding-invite/shaadi-da-poora-scene/
+- https://faizanakramdev.github.io/wedding-invite/mehndi-da-dhol-wajda/
+- https://faizanakramdev.github.io/wedding-invite/baraat-chali-aa/
+- https://faizanakramdev.github.io/wedding-invite/walima-de-roti-de-paisay/
+
+Print QR: `qr/shaadi-da-poora-scene.png` (+ 3 single-event PNGs)
+
+**Important:** QR print ke baad in URLs / folder names mat badalna.
